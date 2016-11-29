@@ -91,9 +91,4 @@ Vagrant.configure(2) do |config|
   workstation.vm.network "private_network", ip: "192.168.10.3"
   workstation.vm.hostname = "chef.workstation.local"
  end
- config.vm.define "jb" do |jb|
-  jb.vm.box = "ubuntu/trusty64"
-  jb.vm.network "private_network", ip: "192.168.10.4"
-  jb.vm.hostname = "jb.local"
- end
 end
