@@ -1,0 +1,21 @@
+{
+  "name": "PREPARE",
+  "description": "installs, apt, java, unzip",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[java]",
+    "recipe[unzip]"
+  ],
+  "env_run_lists": {
+
+  }
+}
+

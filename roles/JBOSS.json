@@ -1,0 +1,19 @@
+{
+  "name": "JBOSS",
+  "description": "deploys JBoss server, deploys MySQL java driverm deploys app",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[JBoss]"
+  ],
+  "env_run_lists": {
+
+  }
+}
+
