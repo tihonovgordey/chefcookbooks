@@ -1,0 +1,15 @@
+#
+# Cookbook Name:: mysql
+# Recipe:: dump
+#
+# Copyright 2016, org llc
+#
+# Restores sql dump to MySQL database
+
+
+include_recipe "mysql::server"
+
+execute "import" do
+  command "mysql -u root -p#{node['mysql']['server_root_password']} #{node['mysql']['service_name']}< guestbookmysqldump.sql"
+  action :nothing
+end

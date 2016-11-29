@@ -1,0 +1,20 @@
+# environments/devops.rb
+
+name "devops"
+{
+  "name": "someserver",
+  "description": "Environment for group of servers where somejavademon will work.",
+  "cookbook_versions": {
+
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "prog": {
+      "prog_name": "somejavaserver",
+    }
+  }
+}

@@ -1,0 +1,45 @@
+#
+# Cookbook Name:: JBoss
+# Recipe:: default
+#
+# Copyright 2016, YOUR_COMPANY_NAME
+#
+# All rights reserved - Do Not Redistribute
+#
+
+node.override['java']['jdk_version'] = '7'
+node.override['java']['java_home'] = '/usr/local/jdk/bin'
+
+include_recipe 'apt'
+include_recipe 'java'
+
+# add jboss user
+user 'jboss' do
+  comment 'jboss User'		 	
+  home '/usr/local/jboss'			
+  system true 			 # system user - true 
+  shell '/bin/false'		 # login shell, no shell access to user
+end
+
+# download-n-unpack jboss 6.0.0 
+ark 'jboss' do
+  url 'http://sourceforge.net/projects/jboss/files/JBoss/JBoss-6.0.0.Final/jboss-as-distribution-6.0.0.Final.zip'
+  home_dir '/usr/local/jboss'
+#  prefix_root '/usr/local'
+  owner 'jboss'
+  version '6.0.0.Final'
+end
+
+
+
+#bash 'install_something' do
+#  user 'root'
+#  cwd '/tmp'
+#  code <<-EOH
+#  apt-get install unzip
+#  mkdir temp2
+#  cd temp2
+#  wget http://sourceforge.net/projects/jboss/files/JBoss/JBoss-6.0.0.Final/jboss-as-distribution-6.0.0.Final.zip
+#  unzip jboss-as-distribution-6.0.0.Final.zip  
+#  EOH
+#end
