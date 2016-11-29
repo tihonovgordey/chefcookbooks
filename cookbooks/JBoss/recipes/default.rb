@@ -59,8 +59,7 @@ end
 
 ark 'guestbookapp' do
    url node['JBoss']['dl_url']
- #  creates node['JBoss']['app_name']
-   creates 'guestbookapp.war'
+   creates node['JBoss']['app_name']
    path '/usr/local/jboss-6.0.0.Final/server/default/deploy'
    action :cherry_pick
  end
